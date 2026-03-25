@@ -14,4 +14,4 @@ My use of AI in this project was limited to only the Shopify documentation assis
 - [Shopify Dev Store](https://admin.shopify.com/store/lola-shop-8742)
 - [Preview Product Page](https://lola-shop-8742.myshopify.com/products/celeste-dress-black) (password: *bacreative*)
 
-Collaborator Code: 5244
+Collaborator Code: 2484
