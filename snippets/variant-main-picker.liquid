@@ -131,12 +131,6 @@
                     mode: 'unscaled'
                   %}
                 {% else %}
-                  {% if product_option_value.available == true %}
-                    <span
-                      class="variant-option__button-label__pill"
-                      data-key="variant-option-pill"
-                    ></span>
-                  {% endif %}
                   <span
                     class="variant-option__button-label__text"
                     data-key="variant-option-text"
@@ -243,20 +237,13 @@
   .variant-option__select-wrapper {
     display: flex;
     position: relative;
-    border: var(--style-border-width-inputs) solid var(--color-border);
-    border-radius: var(--style-border-radius-inputs);
     align-items: center;
     margin-top: var(--margin-2xs);
-    overflow: clip;
   }
 
   .variant-option__select-wrapper:has(.swatch) {
     --variant-picker-swatch-width: 20px;
     --variant-picker-swatch-height: 20px;
-  }
-
-  .variant-option__select-wrapper:hover {
-    border-color: var(--color-variant-hover-border);
   }
 
   .variant-option__select:focus-visible {
@@ -272,6 +259,34 @@
     width: 100%;
     margin: 0;
     cursor: pointer;
+  }
+
+  .variant-option--equal-width-buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .variant-option__button-label {
+    --variant-min-width: 16px;
+    padding: 6px 8px;
+  }
+
+  .variant-option__button-label,
+  .variant-option__button-label:hover {
+    background: none;
+    border: none;
+  }
+  .variant-option__button-label:not(.variant-option__button-label--has-swatch)::before {
+    border: none;
+  }
+
+  input[data-current-checked="true"] + .variant-option__button-label__text {
+    text-decoration: underline;
+  }
+  
+
+  .variant-option__button-label__text {
+    color: #232C33;
   }
 
   .variant-option__select-wrapper .icon {
