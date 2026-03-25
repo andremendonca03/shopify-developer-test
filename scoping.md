@@ -51,8 +51,8 @@ For the product template, the add-to-cart component is already pretty similar to
 
 - The colour swatches feature, using sibling products instead of variants would take roughly *45 minutes*;
 - The development of the USP icons and accordions would take about *1 hour*;
-- You may like section would likely reuse another Horizon section, taking about *45 minutes* to customise;
-- Image with text section could be fully reused from Horizon's XXXXXX section, taking *20 minutes* to customise;
+- You may like section would likely reuse another Horizon section, taking about *15 minutes* to customise;
+- Image with text section could be fully reused from Horizon's 'Image with Text' section, taking *30 minutes* to customise and implement the metafields;
 - Global CTA section would be around *1 hour*;
 
 **Est. total: 4 hours**
