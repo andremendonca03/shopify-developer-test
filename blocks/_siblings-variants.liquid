@@ -1,0 +1,77 @@
+{%  assign siblings_collection = product.metafields.theme.siblings_collection.value %}
+
+{% if siblings_collection != nil %}
+  {% assign siblings = siblings_collection.products | sort: 'title' %}
+
+  <div class="siblings-variants">
+
+    <p class="siblings-variants__label">
+      Colour: {{ product.metafields.theme.sibling_colour_label.value }}
+    </p>
+
+    {% if siblings.size > 1 %}
+      <div class="siblings-variants__group">
+        {% for sibling in siblings %}
+          
+          {% # Current product page %}
+          {% if sibling.id == product.id %}
+            <div href="{{ sibling.url }}" class="siblings-variants__color siblings-variants__color-selected">
+              <span style="background-color: {{ sibling.metafields.theme.sibling_colour.value }};"></span>
+            </div>
+
+          {% # Sibling products pages - linkable %}
+          {% else %}
+            <a href="{{ sibling.url }}" class="siblings-variants__color">
+              <span style="background-color: {{ sibling.metafields.theme.sibling_colour.value }};"></span>
+            </a>
+          {% endif %}
+
+        {% endfor %}
+      </div>
+    {% endif %}
+  
+  </div>
+
+{% endif %}
+
+
+{% stylesheet %}
+
+  .siblings-variants {
+    width: 100%;
+  }
+  .siblings-variants__label {
+    margin-bottom: 20px;
+  }
+  .siblings-variants__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .siblings-variants__color span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%
+  }
+  .siblings-variants__color-selected span {
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0);
+  }
+
+
+{% endstylesheet %}
+
+
+
+{%  schema %} 
+{
+  "name": "Sibling Products Variants",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Sibling Products Variants"
+    }
+  ]
+}
+{% endschema %}
